@@ -1,0 +1,67 @@
+databases:
+
+  cassandra_db:
+  
+    created_users:
+      create_table_path: 'helpers/create_table_created_users.sql'
+      format: 'sql'
+      schema:
+        - column_name: 'id'
+          data_type: StringType
+          nullable: False
+        - column_name: 'first_name'
+          data_type: StringType
+          nullable: False
+        - column_name: 'last_name'
+          data_type: StringType
+          nullable: False
+        - column_name: 'gender'
+          data_type: StringType
+          nullable: False
+        - column_name: 'address'
+          data_type: StringType
+          nullable: False
+        - column_name: 'post_code'
+          data_type: StringType
+          nullable: False
+        - column_name: 'email'
+          data_type: StringType
+          nullable: False
+        - column_name: 'username'
+          data_type: StringType
+          nullable: False
+        - column_name: 'registered_date'
+          data_type: StringType
+          nullable: False
+        - column_name: 'phone'
+          data_type: StringType
+          nullable: False
+        - column_name: 'picture'
+          data_type: StringType
+          nullable: False
+      
+api:
+
+  randomuser:
+    url: 'https://randomuser.me/api/'
+    format: 'json'
+    element: 'result'
+    mapping:
+      - first_name: ['name', 'first']
+      - last_name: ['name', 'last']
+      - gender: 'gender'
+      - address:
+        format: '{street_number} {street_name}, {city}, {state}, {country}'
+        values:
+          street_number: ['location', 'street', 'number']
+          street_name: ['location', 'street', 'name']
+          city: ['location', 'city']
+          state: ['location', 'state']
+          country: ['location', 'country']
+      - post_code: ['location', 'postcode']
+      - email: 'email'
+      - username: ['login', 'username']
+      - dob: ['dob', 'date']
+      - registered_date: ['registered', 'date']
+      - phone: 'phone'
+      - picture: ['picture', 'medium']

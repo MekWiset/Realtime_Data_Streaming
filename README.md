@@ -39,7 +39,7 @@ The project fetches data from an external API and processes it using Apache Airf
 1. **Clone the Repository**: Clone this repository to your local machine.
 
     ```bash
-    git clone https://github.com/yourusername/realtime-data-streaming.git
+    git clone https://github.com/MekWiset/Realtime_Data_Streaming_project.git
     ```
 
 2. **Install Docker and Docker Compose**: Ensure you have Docker installed on your system.
@@ -75,8 +75,8 @@ The project fetches data from an external API and processes it using Apache Airf
    Clone this repository to your local machine.
 
    ```bash
-   git clone https://github.com/your-repo-url.git
-   cd repo
+   git clone https://github.com/MekWiset/Realtime_Data_Streaming_project.git
+   cd Realtime_Data_Streaming_project
    ```
 2. **Prepare Your Configuration**: Ensure all configuration files, including `config.yaml`, are correctly set before starting the services.
 
